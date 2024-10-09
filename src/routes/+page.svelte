@@ -1,5 +1,7 @@
 <script>
 	import Home from '$lib/components/Containers/Home/Home.svelte';
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -7,4 +9,4 @@
 	<meta name="description" content="Beranda PT Sabbi - PT Maxchat Test FE" />
 </svelte:head>
 
-<Home />
+<Home {data} />
