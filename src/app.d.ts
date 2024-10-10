@@ -2,12 +2,7 @@
 // for information about these interfaces
 declare global {
 	namespace App {
-		// interface Error {}
-		// interface Locals {}
-		// interface PageData {}
-		// interface PageState {}
-		// interface Platform {}
-		interface Pasien {
+		interface PasienList {
 			id: number;
 			nama: string;
 			rekam_medis: string;
@@ -15,6 +10,18 @@ declare global {
 			tgl_lahir: string;
 			jk: string;
 			pendidikan: string;
+		}
+		interface Pasien {
+			nama: string;
+			tempat_lahir: string;
+			tgl_lahir: string;
+			provinsi: string;
+			kota: string;
+			kecamatan: string;
+			desa: string;
+			alamat: string;
+			hubungan: string;
+			nama_keluarga: string;
 		}
 	}
 }
