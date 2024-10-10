@@ -7,12 +7,13 @@ export async function load({ url, fetch }) {
   const rekam_medis = url.searchParams.get('rekam_medis') || '';
 
   const res = await fetch(`/api/pasien?ktp=${ktp}&nama=${nama}&rekam_medis=${rekam_medis}`);
+
   if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
+  
   const data = await res.json();
 
-  // Ensure data is an array
   if (!Array.isArray(data)) {
     console.error('Expected data to be an array', data);
     return {
