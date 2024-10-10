@@ -3,9 +3,9 @@
 	import { goto } from '$app/navigation';
 
 	import Heading from '$lib/components/Common/Heading.svelte';
-	import Button from '$lib/components/ui/button/button.svelte';
-	import Label from '$lib/components/ui/label/label.svelte';
-	import Input from '$lib/components/ui/input/input.svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { Label } from '$lib/components/ui/label';
+	import { Input } from '$lib/components/ui/input';
 
 	import { region } from './_constant/region';
 
@@ -93,7 +93,6 @@
 	const handleSubmit = (e: { preventDefault: () => void }) => {
 		e.preventDefault();
 
-		// reset form
 		patientData = {
 			nama: '',
 			tempat_lahir: '',
@@ -128,12 +127,8 @@
 			}
 		];
 
-		// show alert success
 		alert('Data berhasil disimpan');
 	};
-
-	$: console.log('alamatDomisili', alamatDomisili);
-	$: console.log('patientData', patientData);
 </script>
 
 <section class="container">
