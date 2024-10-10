@@ -412,7 +412,7 @@
 
 		<div class="border-b"></div>
 
-		<div class="flex flex-wrap items-center justify-center gap-2 my-2 lg:gap-10">
+		<div class="flex flex-wrap items-center justify-center gap-2 my-2">
 			<Button
 				on:click={() => goto('/')}
 				class="flex items-center gap-1 lg:my-2"
