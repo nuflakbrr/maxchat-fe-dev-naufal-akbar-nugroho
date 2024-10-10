@@ -1,38 +1,40 @@
-# create-svelte
+# maxchat-fe-dev-naufal-akbar-nugroho
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Genting Started
 
-## Creating a project
+Silahkan ikuti langkah-langkah berikut untuk menjalankan proyek ini di laptop Anda.
 
-If you're seeing this, you've probably already done this step. Congrats!
+### Persyaratan
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- GIT
+- Node.js
 
-# create a new project in my-app
-npm create svelte@latest my-app
+### Klona Repositori Ini
+
+Klona repositori ini menggunakan perintah sebagai berikut:
+
+```cmd
+git clone https://github.com/nuflakbrr/maxchat-fe-dev-naufal-akbar-nugroho.git <nama_proyek>
 ```
 
-## Developing
+```cmd
+cd <nama proyek>
+```
+### Instalasi
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Instal depedensi yang digunakan pada proyek ini menggunakan perintah:
 
-```bash
-npm run dev
+```cmd
+npm install
+```
+### Jalankan Proyek
 
-# or start the server and open the app in a new browser tab
+Setelah instal depedensi pada proyek ini, jalankan perintah ini agar Anda bisa mengakses proyek ini.
+
+```cmd
 npm run dev -- --open
+
+# atau
+
+npm run dev
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
