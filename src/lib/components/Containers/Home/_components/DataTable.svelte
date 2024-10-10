@@ -14,7 +14,7 @@
 
 	import Actions from './DataTableActions.svelte';
 
-	export let pasien: App.Pasien[] | undefined = [];
+	export let pasien: App.PasienList[] | undefined = [];
 
 	const table = createTable(readable(pasien), {
 		sort: addSortBy({ disableMultiSort: true }),
