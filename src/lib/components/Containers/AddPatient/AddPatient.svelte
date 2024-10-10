@@ -90,7 +90,7 @@
 		otherFams = otherFams.filter((item) => item.id !== id);
 	};
 
-	const handleSubmit = (e: { preventDefault: () => void }) => {
+	const handleSubmit = (e: Event) => {
 		e.preventDefault();
 
 		patientData = {
