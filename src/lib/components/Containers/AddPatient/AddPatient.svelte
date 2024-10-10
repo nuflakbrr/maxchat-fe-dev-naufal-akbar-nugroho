@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileUser, Plus, ArrowLeft, Printer, Upload, Check } from 'lucide-svelte';
+	import { FileUser, Plus, ArrowLeft, Printer, Upload, Check, X } from 'lucide-svelte';
 	import { goto } from '$app/navigation';
 
 	import Heading from '$lib/components/Common/Heading.svelte';
@@ -65,13 +65,13 @@
 	let otherFams = [
 		{
 			id: 1,
-			name: '',
-			relation: 'Pilih Hubungan Keluarga'
+			nama: '',
+			hubungan: 'Pilih Hubungan Keluarga'
 		},
 		{
 			id: 2,
-			name: '',
-			relation: 'Pilih Hubungan Keluarga'
+			nama: '',
+			hubungan: 'Pilih Hubungan Keluarga'
 		}
 	];
 
@@ -80,8 +80,8 @@
 			...otherFams,
 			{
 				id: otherFams.length + 1,
-				name: '',
-				relation: 'Pilih Hubungan Keluarga'
+				nama: '',
+				hubungan: 'Pilih Hubungan Keluarga'
 			}
 		];
 	};
@@ -118,13 +118,13 @@
 		otherFams = [
 			{
 				id: 1,
-				name: '',
-				relation: 'Pilih Hubungan Keluarga'
+				nama: '',
+				hubungan: 'Pilih Hubungan Keluarga'
 			},
 			{
 				id: 2,
-				name: '',
-				relation: 'Pilih Hubungan Keluarga'
+				nama: '',
+				hubungan: 'Pilih Hubungan Keluarga'
 			}
 		];
 
@@ -487,22 +487,24 @@
 						bind:value={fams.id}
 					/>
 				</div>
+
 				<div class="flex-1 text-center">
 					<input
 						type="text"
-						id="name"
+						id="namaKeluarga"
 						class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-						placeholder="Family Name"
-						bind:value={fams.name}
+						placeholder="Nama Keluarga"
+						bind:value={fams.nama}
 					/>
 				</div>
+
 				<div class="flex-1 text-center">
 					<select
-						id="relation"
+						id="hubunganKeluarga"
 						class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-						bind:value={fams.relation}
+						bind:value={fams.hubungan}
 					>
-						<option selected disabled>Choose option...</option>
+						<option selected disabled>Pilih Hubungan...</option>
 						<option>Ayah</option>
 						<option>Ibu</option>
 						<option>Kakak</option>
@@ -513,10 +515,11 @@
 						<option>Keponakan</option>
 					</select>
 				</div>
+
 				<div class="flex items-center justify-center mx-4">
-					<button on:click={() => removeFams(fams.id)} class="text-sm font-semibold text-gray-600"
-						>X</button
-					>
+					<button on:click={() => removeFams(fams.id)} class="text-sm font-semibold text-gray-600">
+						<X size={18} />
+					</button>
 				</div>
 			</div>
 		{/each}
