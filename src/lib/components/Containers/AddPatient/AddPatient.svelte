@@ -24,15 +24,7 @@
 
 	let sameAsKTP: boolean = false;
 
-	let oriAlamatDomisili = {
-		provinsi: '',
-		kota: '',
-		kecamatan: '',
-		desa: '',
-		alamat: ''
-	};
-
-	let alamatDomisili = { ...oriAlamatDomisili };
+	let alamatDomisili = { provinsi: '', kota: '', kecamatan: '', desa: '', alamat: '' };
 
 	$: if (sameAsKTP) {
 		alamatDomisili = {
@@ -43,7 +35,13 @@
 			alamat: patientData.alamat
 		};
 	} else {
-		alamatDomisili = { ...oriAlamatDomisili };
+		alamatDomisili = {
+			provinsi: '',
+			kota: '',
+			kecamatan: '',
+			desa: '',
+			alamat: ''
+		};
 	}
 
 	// @ts-ignore
@@ -109,7 +107,13 @@
 			nama_keluarga: ''
 		};
 
-		alamatDomisili = { ...oriAlamatDomisili };
+		alamatDomisili = {
+			provinsi: '',
+			kota: '',
+			kecamatan: '',
+			desa: '',
+			alamat: ''
+		};
 		sameAsKTP = false;
 		otherFams = [
 			{
@@ -127,6 +131,9 @@
 		// show alert success
 		alert('Data berhasil disimpan');
 	};
+
+	$: console.log('alamatDomisili', alamatDomisili);
+	$: console.log('patientData', patientData);
 </script>
 
 <section class="container">
@@ -228,8 +235,8 @@
 						bind:value={patientData.kota}
 					>
 						<option selected disabled>Pilih Kota/Kab.</option>
-						{#each kotas as city}
-							<option>{city}</option>
+						{#each kotas as kota}
+							<option>{kota}</option>
 						{/each}
 					</select>
 				</div>
@@ -251,8 +258,8 @@
 						bind:value={patientData.kecamatan}
 					>
 						<option selected disabled>Pilih Kecamatan</option>
-						{#each kecamatans as district}
-							<option>{district}</option>
+						{#each kecamatans as kecamatan}
+							<option>{kecamatan}</option>
 						{/each}
 					</select>
 				</div>
@@ -270,8 +277,8 @@
 						bind:value={patientData.desa}
 					>
 						<option selected disabled>Pilih Desa</option>
-						{#each desas as village}
-							<option>{village}</option>
+						{#each desas as desa}
+							<option>{desa}</option>
 						{/each}
 					</select>
 				</div>
@@ -322,8 +329,8 @@
 						bind:value={alamatDomisili.provinsi}
 					>
 						<option selected disabled>Pilih Provinsi</option>
-						{#each Object.keys(region) as provinsi}
-							<option>{provinsi}</option>
+						{#each Object.keys(region) as provinsiDomisili}
+							<option>{provinsiDomisili}</option>
 						{/each}
 					</select>
 				</div>
@@ -343,8 +350,8 @@
 						bind:value={alamatDomisili.kota}
 					>
 						<option selected disabled>Pilih Kota/Kab.</option>
-						{#each kotas as city}
-							<option>{city}</option>
+						{#each kotas as kotaDomisili}
+							<option>{kotaDomisili}</option>
 						{/each}
 					</select>
 				</div>
@@ -366,8 +373,8 @@
 						bind:value={alamatDomisili.kecamatan}
 					>
 						<option selected disabled>Pilih Kecamatan</option>
-						{#each kecamatans as district}
-							<option>{district}</option>
+						{#each kecamatans as kecamatanDomisili}
+							<option>{kecamatanDomisili}</option>
 						{/each}
 					</select>
 				</div>
@@ -387,8 +394,8 @@
 						bind:value={alamatDomisili.desa}
 					>
 						<option selected disabled>Pilih Desa</option>
-						{#each desas as village}
-							<option>{village}</option>
+						{#each desas as desaDomisili}
+							<option>{desaDomisili}</option>
 						{/each}
 					</select>
 				</div>
