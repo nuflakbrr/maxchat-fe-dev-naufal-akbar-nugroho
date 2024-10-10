@@ -37,12 +37,14 @@
 
 	const handleSubmit = () => {
 		if (inputKtp === '' && inputNama === '' && inputRekamMedis === '') {
-			return goto('/');
+			return goto('/', { replaceState: true });
 		}
 
-		goto(`/?nama=${inputNama}&ktp=${inputKtp}&rekam_medis=${inputRekamMedis}`);
-
 		filterPasien(inputKtp, inputNama, inputRekamMedis);
+
+		goto(`/?nama=${inputNama}&ktp=${inputKtp}&rekam_medis=${inputRekamMedis}`, {
+			replaceState: true
+		});
 	};
 
 	$: filterPasien(searchKtp, searchNama, searchRekamMedis);
