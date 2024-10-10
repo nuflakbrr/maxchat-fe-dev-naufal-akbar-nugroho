@@ -1,16 +1,16 @@
 <script lang="ts">
+	import { readable } from 'svelte/store';
 	import { Render, Subscribe, createRender, createTable } from 'svelte-headless-table';
 	import { addHiddenColumns, addSortBy, addTableFilter } from 'svelte-headless-table/plugins';
+	import ArrowUpDown from 'lucide-svelte/icons/arrow-up-down';
+	// import ChevronDown from 'lucide-svelte/icons/chevron-down';
 	import moment from 'moment';
 
-	import { readable } from 'svelte/store';
-	import ArrowUpDown from 'lucide-svelte/icons/arrow-up-down';
-	import ChevronDown from 'lucide-svelte/icons/chevron-down';
 	import * as Table from '$lib/components/ui/table/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
+	// import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { cn } from '$lib/utils.js';
-	import { Input } from '$lib/components/ui/input/index.js';
+	// import { Input } from '$lib/components/ui/input/index.js';
 
 	import Actions from './DataTableActions.svelte';
 
@@ -127,15 +127,15 @@
 		.filter(([, hide]) => !hide)
 		.map(([id]) => id);
 
-	const { filterValue } = pluginStates.filter;
+	// const { filterValue } = pluginStates.filter;
 
-	const hideableCols = ['nama', 'rekam_medis', 'ktp', 'tgl_lahir', 'jk', 'pendidikan'];
+	// const hideableCols = ['nama', 'rekam_medis', 'ktp', 'tgl_lahir', 'jk', 'pendidikan'];
 </script>
 
 <!-- Display the table -->
 <div class="w-full">
 	<div class="flex items-center py-4">
-		<!-- <Input class="max-w-sm" placeholder="Filter emails..." type="text" bind:value={$filterValue} /> -->
+		<!-- <Input class="max-w-sm" placeholder="Filter emails..." type="text" bind:value={$filterValue} />
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger asChild let:builder>
 				<Button variant="outline" class="ml-auto" builders={[builder]}>
@@ -151,7 +151,7 @@
 					{/if}
 				{/each}
 			</DropdownMenu.Content>
-		</DropdownMenu.Root>
+		</DropdownMenu.Root> -->
 	</div>
 	<div class="border rounded-md">
 		<Table.Root {...$tableAttrs}>
