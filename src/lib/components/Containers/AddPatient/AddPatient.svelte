@@ -7,7 +7,6 @@
 	import Label from '$lib/components/ui/label/label.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 	import * as Select from '$lib/components/ui/select';
-	import Textarea from '$lib/components/ui/textarea/textarea.svelte';
 </script>
 
 <section class="container">
