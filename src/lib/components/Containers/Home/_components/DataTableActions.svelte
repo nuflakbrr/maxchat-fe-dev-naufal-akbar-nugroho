@@ -18,11 +18,11 @@
 		<DropdownMenu.Group>
 			<DropdownMenu.Label>Aksi</DropdownMenu.Label>
 			<DropdownMenu.Item on:click={() => navigator.clipboard.writeText(id.toString())}>
-				Copy payment ID
+				Copy ID
 			</DropdownMenu.Item>
 		</DropdownMenu.Group>
 		<DropdownMenu.Separator />
-		<DropdownMenu.Item>View customer</DropdownMenu.Item>
-		<DropdownMenu.Item>View payment details</DropdownMenu.Item>
+		<DropdownMenu.Item>Lihat Pasien</DropdownMenu.Item>
+		<DropdownMenu.Item>Ubah Data Pasien</DropdownMenu.Item>
 	</DropdownMenu.Content>
 </DropdownMenu.Root>
